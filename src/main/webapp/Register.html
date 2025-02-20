@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Registration Form</title>
+    <!-- Bootstrap CSS link -->
+    <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ4v3Rt7TgLXfjYk2lFz7tvb1x1L8Vvuv8V5l5Oxf73/iwf/xm0tsw/y0Mjf" crossorigin="anonymous">
+	<!-- Bootstrap JS and Popper.js links -->
+	<script src="popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybG5aPA5dW29zAq7xkA2Ehu/2Q0cmSm3g5t7W7vcuRwrT2Zh4b" crossorigin="anonymous"></script>
+	<script src="bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0v8Fq5edhb6z9f+fnU7uRek3aDkfl3Fqq2yyDd5duQwBq+YF" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center my-4">Registration Form</h2>
+
+    <form method="post" action="./RegisterServlet">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" name="fname" class="form-control" id="fname" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" name="lname" class="form-control" id="lname" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="pass" class="form-label">Password</label>
+                    <input type="password" name="pass" class="form-control" id="pass" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="mobile" class="form-label">Mobile</label>
+                    <input type="text" name="mobile" class="form-control" id="mobile" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea name="address" class="form-control" id="address" rows="4" required></textarea>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <button type="submit" name="submit" class="btn btn-primary">Register</button>
+                    <button type="reset" name="reset" class="btn btn-secondary">Clear</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <p class="text-center mt-3">Existing User, <a href="Login.jsp">Sign In</a></p>
+</div>
+</body>
+</html>
