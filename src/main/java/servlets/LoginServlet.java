@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 				request.setAttribute("loginError", "Email/Pass is wrong");
 				isValid=false;
 			} else {
-				session.setAttribute("regid", regId);
+				session.setAttribute("regId", regId);
 				context.getRequestDispatcher("/ViewTasks.jsp").forward(request,  response);
 			}// else
 		}// else

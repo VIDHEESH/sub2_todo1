@@ -14,23 +14,24 @@ import javax.servlet.http.HttpSession;
 import dao.ToDoDAOimpl;
 import dao.ToDoDAOIntf;
 
+
 @WebServlet("/MarkTaskCompletedServlet")
 public class MarkTaskCompletedServlet extends HttpServlet {
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    response.setContentType("text/html");
-    PrintWriter out=response.getWriter();
-    HttpSession session=request.getSession();
-    ServletContext context=getServletContext();
-   
-    int regId=Integer.parseInt(request.getParameter("regId"));
-    int taskId=Integer.parseInt(request.getParameter("taskId"));
-   
-    ToDoDAOIntf dao=ToDoDAOimpl.getInstance();
-    boolean flag=dao.markTaskCompleted(regId, taskId);
-    if(flag)
-      response.sendRedirect("./ViewTasks.jsp");
-    else
-      out.println("TX Failed");
-   
-  }
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out=response.getWriter();
+		HttpSession session=request.getSession();
+		ServletContext context=getServletContext();
+		
+		int regId=Integer.parseInt(request.getParameter("regId"));
+		int taskId=Integer.parseInt(request.getParameter("taskId"));
+		
+		ToDoDAOIntf dao=ToDoDAOimpl.getInstance();
+		boolean flag=dao.markTaskCompleted(regId, taskId);
+		if(flag)
+			response.sendRedirect("./ViewTasks.jsp");
+		else
+			out.println("TX Failed");
+		
+	}
 }

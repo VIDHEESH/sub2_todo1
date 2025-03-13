@@ -27,11 +27,11 @@ public class AddTaskServlet extends HttpServlet {
 		String taskName=request.getParameter("taskName").trim();
 		String taskDate=request.getParameter("taskDate").trim();
 		int taskStatus=Integer.parseInt(request.getParameter("taskStatus").trim());
-		int regid=Integer.parseInt(session.getAttribute("regid").toString());
-		Task task=new Task(0,taskName,taskDate,taskStatus,regid);
+		int regId=Integer.parseInt(session.getAttribute("regId").toString());
+		Task task=new Task(0,taskName,taskDate,taskStatus,regId);
 		
 		ToDoDAOIntf dao=ToDoDAOimpl.getInstance();
-		int taskId=dao.addTask(regid, task);
+		int taskId=dao.addTask(regId, task);
 		if(taskId>0) {
 			context.getRequestDispatcher("/ViewTasks.jsp").forward(request,  response);
 		}
